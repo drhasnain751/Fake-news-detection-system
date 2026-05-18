@@ -23,7 +23,7 @@ function Hero() {
       <div className="bg-grid" style={{ position:'absolute', inset:0, zIndex:0 }} />
 
       <div className="container" style={{ position:'relative', zIndex:1 }}>
-        <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:60, alignItems:'center' }}>
+        <div className="grid-hero">
           {/* Left content */}
           <motion.div initial={{ opacity:0, x:-40 }} animate={{ opacity:1, x:0 }} transition={{ duration:0.7 }}>
             <div className="chip" style={{ marginBottom:20, display:'inline-flex' }}>
@@ -156,7 +156,7 @@ function StatsSection() {
   return (
     <section ref={ref} style={{ padding:'80px 0', background:'rgba(124,58,237,0.04)', borderTop:'1px solid rgba(255,255,255,0.05)', borderBottom:'1px solid rgba(255,255,255,0.05)' }}>
       <div className="container">
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:24, textAlign:'center' }}>
+        <div className="grid-stats">
           {stats.map((stat) => (
             <StatItem key={stat.label} {...stat} inView={inView} />
           ))}
@@ -190,7 +190,7 @@ function FeaturesSection() {
           </p>
         </motion.div>
 
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:20 }}>
+        <div className="grid-features">
           {features.map(({ icon: Icon, title, desc, color }, i) => (
             <motion.div key={title} className="card gradient-border"
               initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }}
@@ -231,9 +231,9 @@ function HowItWorks() {
           </p>
         </motion.div>
 
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:20, position:'relative' }}>
+        <div className="grid-steps">
           {/* Connecting line */}
-          <div style={{ position:'absolute', top:40, left:'12%', right:'12%', height:2, background:'linear-gradient(90deg,#7c3aed,#3b82f6,#06b6d4,#10b981)', zIndex:0, borderRadius:1 }} />
+          <div className="step-connector" style={{ position:'absolute', top:40, left:'12%', right:'12%', height:2, background:'linear-gradient(90deg,#7c3aed,#3b82f6,#06b6d4,#10b981)', zIndex:0, borderRadius:1 }} />
           {steps.map(({ num, icon: Icon, title, desc, color }, i) => (
             <motion.div key={num} initial={{ opacity:0, y:40 }} whileInView={{ opacity:1, y:0 }}
               viewport={{ once:true }} transition={{ delay: i * 0.15 }}
@@ -269,7 +269,7 @@ function Testimonials() {
             Trusted by <span className="gradient-text">researchers & journalists</span>
           </h2>
         </motion.div>
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:24 }}>
+        <div className="grid-testimonials">
           {reviews.map(({ name, role, text, rating }, i) => (
             <motion.div key={name} className="glass gradient-border" style={{ padding:28 }}
               initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }}

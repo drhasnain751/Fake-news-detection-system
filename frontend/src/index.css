@@ -413,3 +413,26 @@ a { color: inherit; }
 @media (max-width: 768px) {
   .dashboard-main { margin-left: 0; }
 }
+
+/* Responsive Grid Utilities */
+.grid-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.grid-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+.grid-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.grid-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; }
+.grid-testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+@media (max-width: 1024px) {
+  .grid-hero { grid-template-columns: 1fr; gap: 40px; }
+  .grid-stats { grid-template-columns: repeat(2, 1fr); }
+  .grid-features { grid-template-columns: repeat(2, 1fr); }
+  .grid-steps { grid-template-columns: repeat(2, 1fr); }
+  .grid-testimonials { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .grid-stats { grid-template-columns: 1fr; }
+  .grid-features { grid-template-columns: 1fr; }
+  .grid-steps { grid-template-columns: 1fr; }
+  .grid-testimonials { grid-template-columns: 1fr; }
+  .step-connector { display: none; }
+}
