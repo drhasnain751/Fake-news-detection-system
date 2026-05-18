@@ -73,7 +73,7 @@ export default function AdminLayout({ children }) {
 
       <div className="dashboard-main">
         <header style={{ height:60, display:'flex', alignItems:'center', padding:'0 24px', borderBottom:'1px solid rgba(255,255,255,0.06)', background:'rgba(5,8,20,0.9)', backdropFilter:'blur(20px)', position:'sticky', top:0, zIndex:30, gap:16 }}>
-          <button onClick={() => setSidebarOpen(!sidebarOpen)} style={{ background:'none', border:'none', color:'rgba(255,255,255,0.5)', cursor:'pointer', padding:4, display:'none' }} className="mobile-only">
+          <button onClick={() => setSidebarOpen(!sidebarOpen)} style={{ background:'none', border:'none', color:'rgba(255,255,255,0.5)', cursor:'pointer', padding:4 }} className="mobile-only">
             {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
           <div style={{ width:8, height:8, borderRadius:'50%', background:'#f97316', boxShadow:'0 0 8px #f97316' }} className="hidden sm:block" />

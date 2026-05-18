@@ -43,7 +43,7 @@ export default function Login() {
       {/* Left panel */}
       <motion.div initial={{ opacity:0, x:-40 }} animate={{ opacity:1, x:0 }} transition={{ duration:0.6 }}
         style={{ flex:1, display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', padding:48, position:'relative', overflow:'hidden' }}
-        className="hidden md:flex"
+        className="desktop-only"
       >
         <div className="orb" style={{ width:500, height:500, background:'#7c3aed', top:-100, left:-100 }} />
         <div className="orb" style={{ width:300, height:300, background:'#3b82f6', bottom:-50, right:-50 }} />

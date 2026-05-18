@@ -60,7 +60,7 @@ export default function Overview() {
       </div>
 
       {/* Stats */}
-      <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:16, marginBottom:28 }}>
+      <div className="dashboard-stats-grid">
         <StatCard icon={Activity} label="Total Analyses" value={loading ? '—' : analytics?.total ?? 0} sub="All time" color="#a855f7" delay={0} />
         <StatCard icon={AlertTriangle} label="Fake Detected" value={loading ? '—' : analytics?.fakeCount ?? 0} sub={`${analytics?.fakePercent ?? 0}% of total`} color="#ef4444" delay={0.05} />
         <StatCard icon={CheckCircle} label="Real Verified" value={loading ? '—' : analytics?.realCount ?? 0} sub={`${analytics?.realPercent ?? 0}% of total`} color="#10b981" delay={0.1} />
@@ -68,7 +68,7 @@ export default function Overview() {
       </div>
 
       {/* Charts row */}
-      <div style={{ display:'grid', gridTemplateColumns:'1.6fr 1fr', gap:20, marginBottom:24 }}>
+      <div className="dashboard-charts-grid">
         {/* Bar chart */}
         <motion.div className="glass" initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }} transition={{ delay:0.2 }} style={{ padding:24 }}>
           <h3 style={{ color:'white', fontWeight:600, fontSize:'0.95rem', margin:'0 0 20px', display:'flex', alignItems:'center', gap:8 }}>
@@ -113,8 +113,8 @@ export default function Overview() {
       </div>
 
       {/* CTA Card */}
-      <motion.div className="glass gradient-border" initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }} transition={{ delay:0.3 }}
-        style={{ padding:'24px 28px', display:'flex', alignItems:'center', justifyContent:'space-between', gap:20 }}>
+      <motion.div className="glass gradient-border dashboard-cta-row" initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }} transition={{ delay:0.3 }}
+        style={{ padding:'24px 28px' }}>
         <div style={{ display:'flex', alignItems:'center', gap:16 }}>
           <div style={{ width:44, height:44, borderRadius:12, background:'linear-gradient(135deg,#7c3aed,#a855f7)', display:'flex', alignItems:'center', justifyContent:'center' }}>
             <Search size={20} color="white" />

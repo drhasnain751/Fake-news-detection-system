@@ -70,6 +70,7 @@ export default function Signup() {
       {/* Left panel */}
       <motion.div initial={{ opacity:0, x:-40 }} animate={{ opacity:1, x:0 }} transition={{ duration:0.6 }}
         style={{ flex:'0 0 45%', display:'flex', flexDirection:'column', justifyContent:'center', padding:56, position:'relative', overflow:'hidden', background:'rgba(124,58,237,0.04)', borderRight:'1px solid rgba(255,255,255,0.06)' }}
+        className="desktop-only"
       >
         <div className="orb" style={{ width:450, height:450, background:'#7c3aed', top:-150, right:-100 }} />
         <div className="orb" style={{ width:300, height:300, background:'#06b6d4', bottom:-50, left:-50 }} />

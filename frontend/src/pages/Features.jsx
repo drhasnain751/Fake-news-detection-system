@@ -71,7 +71,7 @@ export default function Features() {
         {/* Feature Grid */}
         <section style={{ paddingBottom:100 }}>
           <div className="container">
-            <div style={{ display:'grid', gridTemplateColumns:'repeat(2,1fr)', gap:24 }}>
+            <div className="features-container-grid">
               {features.map(({ icon: Icon, title, color, desc, points }, i) => (
                 <motion.div key={title} className="card gradient-border"
                   initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }}
@@ -87,7 +87,7 @@ export default function Features() {
                       <p style={{ margin:0, fontSize:'0.875rem', lineHeight:1.6 }}>{desc}</p>
                     </div>
                   </div>
-                  <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'8px 16px' }}>
+                  <div className="feature-points-grid">
                     {points.map(pt => (
                       <div key={pt} style={{ display:'flex', alignItems:'center', gap:6, fontSize:'0.8rem', color:'rgba(255,255,255,0.55)' }}>
                         <div style={{ width:5, height:5, borderRadius:'50%', background:color, flexShrink:0 }} />
@@ -108,7 +108,7 @@ export default function Features() {
               <h2 style={{ fontSize:'2rem', color:'white', marginBottom:12 }}>Tech <span className="gradient-text">Stack</span></h2>
               <p style={{ color:'rgba(255,255,255,0.5)' }}>Enterprise-grade technologies powering FakeGuard</p>
             </motion.div>
-            <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:16 }}>
+            <div className="tech-stack-grid">
               {[
                 { name:'React + Vite', role:'Frontend', color:'#06b6d4' },
                 { name:'Tailwind CSS', role:'Styling', color:'#3b82f6' },

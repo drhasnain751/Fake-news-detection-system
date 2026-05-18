@@ -70,7 +70,7 @@ export default function Contact() {
         {/* Contact Grid */}
         <section style={{ padding:'40px 0 80px' }}>
           <div className="container">
-            <div style={{ display:'grid', gridTemplateColumns:'1fr 1.6fr', gap:40 }}>
+            <div className="contact-grid">
               {/* Info column */}
               <div>
                 <div style={{ display:'flex', flexDirection:'column', gap:14, marginBottom:32 }}>
@@ -121,7 +121,7 @@ export default function Contact() {
                 <h2 style={{ color:'white', fontWeight:700, fontSize:'1.4rem', marginBottom:6, marginTop:0 }}>Send a Message</h2>
                 <p style={{ color:'rgba(255,255,255,0.45)', fontSize:'0.875rem', marginBottom:28 }}>Fill out the form below and we'll respond within 24 hours.</p>
                 <form onSubmit={handleSubmit} style={{ display:'flex', flexDirection:'column', gap:18 }}>
-                  <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16 }}>
+                  <div className="contact-inputs-grid">
                     <div>
                       <label className="form-label">Name *</label>
                       <input className="form-input" type="text" placeholder="Your name" value={form.name} onChange={e => setForm({...form, name:e.target.value})} />

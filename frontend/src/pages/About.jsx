@@ -46,7 +46,7 @@ export default function About() {
         {/* Problem Statement */}
         <section style={{ padding:'64px 0', background:'rgba(239,68,68,0.04)', borderTop:'1px solid rgba(239,68,68,0.1)', borderBottom:'1px solid rgba(239,68,68,0.1)' }}>
           <div className="container">
-            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:60, alignItems:'center' }}>
+            <div className="about-problem-grid">
               <motion.div initial={{ opacity:0, x:-30 }} whileInView={{ opacity:1, x:0 }} viewport={{ once:true }}>
                 <h2 style={{ fontSize:'2.2rem', color:'white', marginBottom:16 }}>The <span style={{ color:'#ef4444' }}>Problem</span></h2>
                 <p style={{ color:'rgba(255,255,255,0.6)', lineHeight:1.7, marginBottom:16 }}>
@@ -83,7 +83,7 @@ export default function About() {
             <motion.div initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} style={{ textAlign:'center', marginBottom:48 }}>
               <h2 style={{ fontSize:'2rem', color:'white', marginBottom:12 }}>System <span className="gradient-text">Architecture</span></h2>
             </motion.div>
-            <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:20, alignItems:'start' }}>
+            <div className="about-arch-grid">
               {[
                 { icon: Code2, title:'Frontend Layer', color:'#3b82f6', items:['React 18 + Vite 5','Tailwind CSS v4','Framer Motion','Recharts Analytics','React Router v6'] },
                 { icon: Target, title:'Backend Layer', color:'#10b981', items:['Node.js + Express','MongoDB Atlas','JWT Authentication','REST API Design','Rate Limiting'] },
@@ -135,7 +135,7 @@ export default function About() {
               <h2 style={{ fontSize:'2rem', color:'white', marginBottom:12 }}>Meet the <span className="gradient-text">Team</span></h2>
               <p style={{ color:'rgba(255,255,255,0.5)' }}>Computer Science students passionate about AI and truth</p>
             </motion.div>
-            <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:20 }}>
+            <div className="about-team-grid">
               {team.map(({ name, role, init, color }, i) => (
                 <motion.div key={name} className="card" initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} transition={{ delay: i * 0.1 }}
                   style={{ textAlign:'center', padding:'32px 20px' }}>
@@ -162,7 +162,7 @@ export default function About() {
             <motion.div initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} style={{ textAlign:'center', marginBottom:48 }}>
               <h2 style={{ fontSize:'2rem', color:'white', marginBottom:12 }}>Future <span className="gradient-text">Enhancements</span></h2>
             </motion.div>
-            <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:16 }}>
+            <div className="about-future-grid">
               {[
                 { icon:'🌍', title:'Multi-language Support', desc:'Extend detection to Urdu, Arabic, Hindi, and 20+ languages using multilingual BERT.' },
                 { icon:'🐦', title:'Social Media Integration', desc:'Direct integration with Twitter/X, Facebook API for real-time feed analysis.' },

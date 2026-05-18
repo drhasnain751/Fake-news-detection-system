@@ -84,7 +84,7 @@ export default function DashboardLayout({ children }) {
         {/* Top bar */}
         <header style={{ height:60, display:'flex', alignItems:'center', justifyContent:'space-between', padding:'0 24px', borderBottom:'1px solid rgba(255,255,255,0.06)', background:'rgba(5,8,20,0.8)', backdropFilter:'blur(20px)', position:'sticky', top:0, zIndex:30 }}>
           <div style={{ display:'flex', alignItems:'center', gap:12 }}>
-            <button onClick={() => setSidebarOpen(!sidebarOpen)} style={{ background:'none', border:'none', color:'rgba(255,255,255,0.5)', cursor:'pointer', padding:4, display:'none' }} className="mobile-only">
+            <button onClick={() => setSidebarOpen(!sidebarOpen)} style={{ background:'none', border:'none', color:'rgba(255,255,255,0.5)', cursor:'pointer', padding:4 }} className="mobile-only">
               {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
             <div style={{ color:'white', fontWeight:600, fontSize:'0.95rem' }}>
