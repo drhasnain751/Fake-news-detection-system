@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+.venv/
+venv/
+__pycache__/
+
+# Environment Variables
+.env
+.env.local
+
+# Database & Datasets
+data/
+*.db
+*.sqlite
+*.sqlite3
+Fake.csv*
+True.csv*
+dataset.csv
+
+# Build outputs
+dist/
+build/
+.DS_Store
