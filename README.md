@@ -164,3 +164,18 @@ This application is fully responsive. CSS flexbox, grid, and media queries have 
 - 📲 Mobile Phones (iPhone, Android)
 
 The sidebar cleanly collapses into a mobile-friendly hamburger menu on smaller screens, and data tables automatically scroll horizontally to prevent layout breaking.
+
+---
+
+## 🧪 Demo News Samples for Testing
+
+If you want to quickly test the ML detection engine, copy and paste the following texts into the **Detect News** dashboard:
+
+### 🟢 Sample 1: REAL News
+> WASHINGTON (Reuters) - The U.S. Senate on Thursday approved a sweeping tax overhaul bill, bringing President Donald Trump and his fellow Republicans a step closer to their goal of slashing taxes for businesses and the wealthy. The 51-49 vote passed shortly after midnight.
+
+### 🔴 Sample 2: FAKE News
+> BREAKING: Pope Francis Shocks World, Endorses Donald Trump for President. In an unprecedented move, the Vatican has released a statement today urging all Americans to vote for Donald Trump in the upcoming election. News outlets are completely stunned by this revelation.
+
+### 🔴 Sample 3: FAKE News
+> Hillary Clinton has officially been indicted by the FBI for her emails. Top officials report that she was secretly arrested during the night and is currently being held at a high-security military base in Cuba. Mainstream media refuses to report on this!
