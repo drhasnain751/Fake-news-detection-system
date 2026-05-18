@@ -69,7 +69,7 @@ export default function Navbar() {
         </div>
 
         {/* Auth buttons */}
-        <div style={{ display:'flex', alignItems:'center', gap:10 }}>
+        <div className="desktop-only" style={{ display:'flex', alignItems:'center', gap:10 }}>
           {user ? (
             <>
               <Link to="/dashboard" className="btn-secondary" style={{ padding:'9px 18px', fontSize:'0.875rem' }}>
@@ -87,15 +87,16 @@ export default function Navbar() {
               </Link>
             </>
           )}
-          {/* Mobile menu toggle */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            style={{ background:'none', border:'none', color:'white', cursor:'pointer', display:'none', marginLeft:8 }}
-            className="mobile-menu-btn"
-          >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
+        
+        {/* Mobile menu toggle */}
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          style={{ background:'none', border:'none', color:'white', cursor:'pointer', marginLeft:'auto' }}
+          className="mobile-only"
+        >
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
 
       {/* Mobile Menu */}

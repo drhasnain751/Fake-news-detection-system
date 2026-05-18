@@ -361,10 +361,12 @@ body {
   .container { padding: 0 16px; }
   .section { padding: 60px 0; }
   .mobile-only { display: block !important; }
+  .desktop-only { display: none !important; }
 }
 
 @media (min-width: 769px) {
   .mobile-only { display: none !important; }
+  .desktop-only { display: flex !important; }
 }
 
 h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; line-height: 1.2; }
