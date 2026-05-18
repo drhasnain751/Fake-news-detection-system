@@ -38,49 +38,83 @@ A full-stack machine learning platform designed to detect fake news using advanc
 
 ---
 
-## 💻 How to Run Locally (Manual Setup)
+## 💻 How to Run Locally in VS Code (Manual Setup)
 
-You need three terminal windows to run all services:
+To run the entire platform locally, follow these steps:
 
-### 1. Backend (Node.js/SQLite)
+### 1. Download from GitHub
+1. Open your terminal or Git Bash.
+2. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/your-repo.git
+   ```
+3. Open the project folder in VS Code:
+   ```bash
+   cd your-repo
+   code .
+   ```
+
+### 2. Start the Backend (Node.js/SQLite)
+Open a new integrated terminal in VS Code (`Ctrl` + `` ` ``), and run:
 ```bash
 cd backend
 npm install
 npm run dev
 ```
-*Runs on http://localhost:5000*
+*The backend will start on http://localhost:5000 and automatically initialize the SQLite database and seed the default admin account.*
 
-### 2. ML Service (Python/Flask)
+### 3. Start the ML Service (Python/Flask)
+Open a **second** terminal window in VS Code, and run:
 ```bash
 cd ml-service
-# Activate virtual environment
-# Windows: .\venv\Scripts\activate
-# Mac/Linux: source venv/bin/activate
 
+# Create and activate a virtual environment
+python -m venv venv
+# On Windows:
+venv\Scripts\activate
+# On Mac/Linux:
+source venv/bin/activate
+
+# Install requirements and run
 pip install -r requirements.txt
 flask run --port=5001
 ```
-*Runs on http://localhost:5001*
+*The ML API will start on http://localhost:5001.*
 
-### 3. Frontend (React/Vite)
+### 4. Start the Frontend (React/Vite)
+Open a **third** terminal window in VS Code, and run:
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-*Runs on http://localhost:5173*
+*The React app will launch on http://localhost:5173. Open this link in your browser!*
 
 ---
 
-## 🔐 Default Credentials (Login/Signup)
+## 🔐 How to Use Login & Authentication
 
-When launching the application for the first time, you can register a new account on the `/signup` page.
+The platform features an advanced role-based access control system. Here is how to use it:
 
-**Default Admin Credentials (if seeded):**
-- **Email:** `admin@fakenews.com`
-- **Password:** `admin123`
+### 1. User Registration (Signup)
+1. Navigate to the `/signup` page.
+2. Enter your Name, a valid Email, and a secure Password.
+3. Accept the Terms & Conditions and click **Create Account**.
+4. You will be automatically authenticated, securely saved into the database, and redirected to your personal **User Dashboard**.
 
-*Note: You can easily sign up with any email, and the system will grant you access to the dashboard to test out the prediction engine.*
+### 2. Standard User Login
+1. Navigate to the `/login` page.
+2. Enter the credentials you just registered with.
+3. You will be routed to the `/dashboard` where you can analyze news, view your personal prediction history, and update your profile settings.
+
+### 3. Admin Login
+The system automatically creates a default Administrator account when the backend server starts. 
+1. Navigate to the `/login` page.
+2. Enter the seeded Admin credentials:
+   - **Email:** `admin@fakenews.com`
+   - **Password:** `adminpassword123`
+3. The system will detect your `admin` role and redirect you to the **Admin Control Panel** (`/admin`).
+4. From the Admin Dashboard, you can monitor global predictions, manage users, upload training datasets, and monitor ML model performance!
 
 ---
 
