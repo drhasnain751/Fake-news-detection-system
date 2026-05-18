@@ -86,7 +86,28 @@ app.use((err, req, res, next) => {
 });
 
 // Initialize SQLite DB and start server
-initDb();
+initDb()
+  .then(async () => {
+    const User = require('./models/User');
+    try {
+      const adminExists = await User.findOne({ email: 'admin@fakenews.com' });
+      if (!adminExists) {
+        await User.create({
+          name: 'System Admin',
+          email: 'admin@fakenews.com',
+          password: 'adminpassword123',
+          role: 'admin'
+        });
+        console.log('🎉 Default admin user seeded successfully!');
+      }
+    } catch (err) {
+      console.error('❌ Error seeding default admin:', err);
+    }
+  })
+  .catch((err) => {
+    console.error('❌ Database initialization failed:', err);
+  });
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
