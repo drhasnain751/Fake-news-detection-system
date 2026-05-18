@@ -76,17 +76,30 @@ const run = (sql, params = []) => new Promise((resolve, reject) => {
   });
 });
 
+const mapRow = (row) => {
+  if (!row) return row;
+  const mapped = { ...row };
+  if (row.created_at !== undefined) mapped.createdAt = row.created_at;
+  if (row.updated_at !== undefined) mapped.updatedAt = row.updated_at;
+  return mapped;
+};
+
+const mapRows = (rows) => {
+  if (!rows) return rows;
+  return rows.map(mapRow);
+};
+
 const get = (sql, params = []) => new Promise((resolve, reject) => {
   db.get(sql, params, (err, row) => {
     if (err) return reject(err);
-    resolve(row);
+    resolve(mapRow(row));
   });
 });
 
 const all = (sql, params = []) => new Promise((resolve, reject) => {
   db.all(sql, params, (err, rows) => {
     if (err) return reject(err);
-    resolve(rows);
+    resolve(mapRows(rows));
   });
 });
 
