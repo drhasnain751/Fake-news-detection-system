@@ -438,3 +438,44 @@ a { color: inherit; }
   .grid-testimonials { grid-template-columns: 1fr; }
   .step-connector { display: none; }
 }
+
+.grid-footer {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 1024px) {
+  .grid-footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-footer {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+.flex-hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 640px) {
+  .flex-hero-btns {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  .flex-hero-btns a {
+    width: 100% !important;
+    text-align: center;
+    justify-content: center;
+  }
+}

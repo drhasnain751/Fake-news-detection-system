@@ -45,7 +45,7 @@ function Hero() {
               Our advanced NLP engine and ensemble ML models analyze news articles in real-time,
               giving you instant credibility scores backed by science.
             </p>
-            <div style={{ display:'flex', gap:14, flexWrap:'wrap', marginBottom:48 }}>
+            <div className="flex-hero-btns">
               <Link to="/signup" className="btn-primary" style={{ fontSize:'1rem', padding:'14px 32px' }}>
                 Start Analyzing <ArrowRight size={18} />
               </Link>
@@ -98,11 +98,11 @@ function Hero() {
             </div>
 
             {/* Floating mini cards */}
-            <div className="float-slow glass" style={{ position:'absolute', top:-20, right:-20, padding:'10px 16px', borderRadius:12, display:'flex', alignItems:'center', gap:8 }}>
+            <div className="float-slow glass desktop-only" style={{ position:'absolute', top:-20, right:-20, padding:'10px 16px', borderRadius:12, display:'flex', alignItems:'center', gap:8 }}>
               <CheckCircle size={16} color="#10b981" />
               <span style={{ fontSize:'0.8rem', color:'white', fontWeight:500 }}>Real-time analysis</span>
             </div>
-            <div className="float-fast glass" style={{ position:'absolute', bottom:-20, left:-20, padding:'10px 16px', borderRadius:12, display:'flex', alignItems:'center', gap:8 }}>
+            <div className="float-fast glass desktop-only" style={{ position:'absolute', bottom:-20, left:-20, padding:'10px 16px', borderRadius:12, display:'flex', alignItems:'center', gap:8 }}>
               <Zap size={16} color="#f59e0b" />
               <span style={{ fontSize:'0.8rem', color:'white', fontWeight:500 }}>Instant results</span>
             </div>
